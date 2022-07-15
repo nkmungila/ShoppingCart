@@ -1,1 +1,1 @@
-Cypress Automation exampple for shopping Cart
+Cypress Automation example for shopping Cart

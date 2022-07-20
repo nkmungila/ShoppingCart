@@ -24,5 +24,14 @@ describe('Home Page', () => {
       //expect(prop).should.have.attr('minlength','2')
       //assert(prop).should.have.attr('minlength','2')
     })
+    cy.get('.nav-link').contains('Shop').click()
+    cy.get('.card-title').each(($e1,index,$lisr) =>{
+      let product = $e1.text()
+      
+      if (product.includes("Nokia")){
+        cy.log(product)
+        cy.get('.btn').contains('Add ').click()
+      }
+    })
   })
 })

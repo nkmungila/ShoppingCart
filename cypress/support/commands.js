@@ -16,7 +16,8 @@
             
             if (product.includes(prodcut)){
               cy.log(product)
-              cy.get('.btn').contains('Add ').click()
+              cy.get('.btn.btn-info').eq(index).click()
+              //cy.get().find()
             }
           })
      })

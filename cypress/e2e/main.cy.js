@@ -1,4 +1,7 @@
 /// <reference types = "Cypress" />
+import HomePage from '../PageObject/HomePage'
+import Homepage from '../PageObject/HomePage'
+
 describe('Home Page', () => {
   
   before(()=>{
@@ -7,11 +10,12 @@ describe('Home Page', () => {
     })
   })
   it('passes', function() {
+    const homepage = new HomePage()
     cy.visit('/')
-    cy.get('input[name="name"]:nth-child(2)').type(this.data.name)
-    cy.get('input[name="email"]').type(this.data.email)
-    cy.get('#exampleFormControlSelect1').select(this.data.gender)
-    cy.get('input[name="name"]:nth-child(2)').should('have.value',this.data.name)
+    homepage.EditBox.type(this.data.name)
+    homepage.Email.type(this.data.email)
+    homepage.Gender.select(this.data.gender)
+    homepage.TwoWayEditBox.should('have.value',this.data.name)
     
     cy.get('input[name="name"]').each(($e1) =>{
       let textbox = $e1.val()
